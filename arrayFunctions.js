@@ -1,60 +1,35 @@
-/**
- * getOdds(numbers):
- * - receives an array of numbers called `numbers`
- * - filters the `numbers` array in order to...
- * - returns an array of only ODD numbers.
- *
- * e.g.
- * getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> [1, 3, 5, 7, 9]
- * getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [11, 35, 601, 777, 999]
- */
+//______________________________________________________________________________________
 function getOdds(numbers) {
-  // Your code here
+  const Odd = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 1) {
+      Odd.push(numbers[i]);
+    }
+  }
+  return Odd;
 }
-
-/**
- * getEvens(numbers):
- * - receives an array of numbers called `numbers`
- * - filters the `numbers` array in order to...
- * - returns an array of only EVEN numbers.
- *
- * e.g.
- * getEvens([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> [2, 4, 6, 8]
- * getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> [52, 14, 56, 888]
- */
+//_________________________________________________________________________________________
 function getEvens(numbers) {
-  // Your code here
+  const Even = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      Even.push(numbers[i]);
+    }
+  }
+  return Even;
 }
-
-/**
- * getDuplicateCount(x, numbers):
- * - receives a number `x`, and an array of numbers called `numbers`
- * - returns the number of times `x` occurs in `numbers`.
- *
- * e.g.
- * getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]) -> 4
- * getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]) -> 3
- */
+//_________________________________________________________________________________________
 function getDuplicateCount(x, numbers) {
-  // Your code here
+  let r = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) r++;
+  }
+  return r;
 }
-
-/**
- * youGottaCalmDown(s):
- * - receives a string `s`
- * - returns the string `s` with at most one exclamation mark (!) at the end.
- *
- * e.g.
- * youGottaCalmDown("HI!!!!!!!!!!") -> "HI!"
- * youGottaCalmDown("Taylor Schwifting!!!!!!!!!!!") -> "Taylor Shwifting!"
- * youGottaCalmDown("Hellooooo") -> "Hellooooo"
- *
- * Hint:
- * - Use string method .slice()
- * - Use string method .endsWith()
- */
+//_________________________________________________________________________________________
 function youGottaCalmDown(s) {
-  // Your code here
+  while (s.endsWith("!!")) s = s.slice(0, -1);
+  return s;
 }
 
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
